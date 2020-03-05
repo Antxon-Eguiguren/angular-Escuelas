@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <h1>Listado de Alumnos desde la API</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+                <th>Email</th>
+                <th>Nota Media</th>
+                <th>Fecha de Matriculación</th>
+                <th>Matrícula</th>
+                <th>Discapacidad</th>
+                <th>Sexo</th>
+                <th>Borrar</th>
+                <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alumno of alumnos">
+                <td>{{alumno.id}}</td>
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.apellidos}}</td>
+                <td>{{alumno.edad}}</td>
+                <td>{{alumno.email}}</td>
+                <td>{{alumno.notamedia}}</td>
+                <td>{{alumno.fecha_matricula}}</td>
+                <td>{{alumno.matricula}}</td>
+                <td>{{alumno.discapacidad}}</td>
+                <td>{{alumno.sexo}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="manejarClickBorrar(alumno.id)">Borrar
+                        Estudiante</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" [routerLink]="['/alumnos', alumno.id]">Detalle
+                        Estudiante</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" [routerLink]="['/formulario']">Crear Nuevo Estudiante</button>
+</div>
+<router-outlet></router-outlet>

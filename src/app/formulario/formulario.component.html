@@ -1,0 +1,190 @@
+<div class="container">
+
+    <h1>Formulario Nuevo Estudiante</h1>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="nombre">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.nombre.valid && formulario.controls.nombre.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error" *ngIf="formulario.controls.nombre.errors?.required && formulario.controls.nombre.touched">
+                El campo Nombre es obligatorio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Apellidos</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="apellidos">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.apellidos.valid && formulario.controls.apellidos.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+        </div>
+
+        <p class="error"
+            *ngIf="formulario.controls.apellidos.errors?.required && formulario.controls.apellidos.touched">
+            El campo Apellidos es obligatorio.
+        </p>
+
+        <div class="form-group">
+            <label>Edad</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="edad">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.edad.valid && formulario.controls.edad.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error" *ngIf="formulario.controls.edad.errors?.required && formulario.controls.edad.touched">
+                El campo Edad es obligatorio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.email.valid && formulario.controls.email.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error" *ngIf="formulario.controls.email.errors?.required && formulario.controls.email.touched">
+                El campo Email es obligatorio.
+            </p>
+            <p class="error" *ngIf="formulario.controls.email.errors?.pattern && formulario.controls.email.touched">
+                El campo Email debe ser un email válido.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Nota Media</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="notamedia">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.notamedia.valid && formulario.controls.notamedia.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error"
+                *ngIf="formulario.controls.notamedia.errors?.required && formulario.controls.notamedia.touched">
+                El campo Nota Media es obligatorio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Fecha de Matriculación</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="date" class="form-control" formControlName="fecha_matricula">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.fecha_matricula.valid && formulario.controls.fecha_matricula.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error"
+                *ngIf="formulario.controls.fecha_matricula.errors?.required && formulario.controls.fecha_matricula.touched">
+                El campo Fecha de Matriculación es obligatorio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Matrícula</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="matricula">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.matricula.valid && formulario.controls.matricula.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error"
+                *ngIf="formulario.controls.matricula.errors?.required && formulario.controls.matricula.touched">
+                El campo Matrícula es obligatorio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Discapacidad</label>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" class="form-control" formControlName="discapacidad">
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.discapacidad.valid && formulario.controls.discapacidad.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error"
+                *ngIf="formulario.controls.discapacidad.errors?.required && formulario.controls.discapacidad.touched">
+                El campo Discapacidad es obligatorio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Sexo</label>
+            <div class="row">
+                <div class="col-11">
+                    <select class="custom-select" name="sexo" formControlName="sexo">
+                        <option value="" selected>Selecciona uno...</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <div class="col-1">
+                    <img *ngIf="formulario.controls.sexo.valid && formulario.controls.sexo.dirty"
+                        src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde-1.png"
+                        width="40" height="40">
+                </div>
+            </div>
+
+            <p class="error" *ngIf="formulario.controls.sexo.errors?.required && formulario.controls.sexo.touched">
+                El campo Sexo es obligatorio.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-11">
+                <input type="submit" value="Crear Estudiante" class="btn btn-block btn-success"
+                    [disabled]="!formulario.valid">
+            </div>
+        </div>
+
+    </form>
+
+</div>
