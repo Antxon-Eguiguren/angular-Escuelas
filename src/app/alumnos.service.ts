@@ -13,11 +13,21 @@ export class AlumnosService {
   }
 
   getAll(): Promise<any> {
-    return this.httpClient.get(this.baseUrl).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        user_token: localStorage.getItem('token')
+      })
+    };
+    return this.httpClient.get(this.baseUrl, httpOptions).toPromise();
   }
 
   getById(pAlumnoId): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/${pAlumnoId}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        user_token: localStorage.getItem('token')
+      })
+    };
+    return this.httpClient.get(`${this.baseUrl}/${pAlumnoId}`, httpOptions).toPromise();
   }
 
   add(pAlumno): Promise<any> {

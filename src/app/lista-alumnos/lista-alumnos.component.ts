@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumnosService } from '../alumnos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -10,7 +11,7 @@ export class ListaAlumnosComponent implements OnInit {
 
   alumnos: [];
 
-  constructor(private alumnosService: AlumnosService) {
+  constructor(private alumnosService: AlumnosService, private router: Router) {
   }
 
   ngOnInit() {
@@ -19,7 +20,7 @@ export class ListaAlumnosComponent implements OnInit {
         this.alumnos = response;
       })
       .catch(err => {
-        console.log(err);
+        this.router.navigate(['/login']);
       });
   }
 
